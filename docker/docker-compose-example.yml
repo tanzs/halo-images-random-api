@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  halo-api:
+    image: halo-image-api:1.0.0
+    container_name: halo-image-api
+    network_mode: "host"
+    environment:
+      SERVER_PORT: 8080 #服务端口
+      MYSQL_HOST: localhost
+      MYSQL_PORT: 3306
+      MYSQL_DB: halo
+      MYSQL_USER: halo
+      MYSQL_PASSWORD: halo123
+      REDIS_HOST: localhost
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: halo123
+      REdis_DATABASE: 0
+      AUTH_KEY: testkey123
+    restart: always
+

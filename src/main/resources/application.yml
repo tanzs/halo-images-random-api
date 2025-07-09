@@ -1,0 +1,20 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB:halo}?useSSL=false&characterEncoding=utf8
+    username: ${MYSQL_USER:halo}
+    password: ${MYSQL_PASSWORD:halo123}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password:  ${REDIS_PASSWORD:halo123}
+      database: ${REDIS_DATABASE:0}
+
+auth:
+  key: ${AUTH_KEY:testkey123}
+

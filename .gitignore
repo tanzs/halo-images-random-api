@@ -6,7 +6,6 @@
 .mvn/timing.properties
 
 # 本地 Maven 配置
-/settings.xml
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -50,7 +49,7 @@ Thumbs.db
 application-local.yml
 application-dev.yml
 application-test.yml
-/docker/docker-compose.yml
+/docker-compose.yml
 
 # -------------------------------------
 # Docker 构建临时文件

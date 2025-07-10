@@ -27,13 +27,33 @@ halo-random-image-api/
 
 ## 🚀 快速启动
 
-### 1. 使用 Docker 构建镜像
+### 快速使用
+
+#### 1. 镜像拉取
+
+通过阿里云镜像仓库拉取镜像
+```bash
+docker pull registry.cn-hangzhou.aliyuncs.com/aiym/halo-image-api:[镜像版本号]
+```
+#### 2.docker-compose启动
+
+- 复制 docker-compose-example.yml 更改为 docker-compose-example.yml
+- 调整样例中镜像名称：`image` 内容为 `registry.cn-hangzhou.aliyuncs.com/aiym/halo-image-api:[镜像版本号]`
+- 启动镜像
+```bash
+  docker-compose up -d
+```
+---
+
+### 本地使用
+
+#### 1. 使用 Docker 构建镜像
 
 ```bash
 docker build -t halo-image-api:1.0.0 .
 ```
 
-### 2. 使用 Docker Compose 启动服务
+#### 2. 使用 Docker Compose 启动服务
 
 ```bash
 # 先复制示例
@@ -42,7 +62,7 @@ cp -r docker-compose-example.yml docker-compose.yml
 docker compose up -d
 ```
 
-### 3. 使用 Docker 启动服务
+#### 3. 使用 Docker 启动服务
 
 ```bash
 docker run -d \

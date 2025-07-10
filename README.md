@@ -4,10 +4,9 @@
 
 本项目在自建Halo个人博客网站时，使用主题：Sakura，因主题自带随机图接口访问经常性加载不出图片，便基于Halo图库以及Sakura主题构建API接口，采用自己图库图片进行随机输出，增加访问效率。
 
+个人博客： https://blog.aiym.fun:8888
 
-![image](https://img.aiym.fun:8888/note/2025/07/4017bd9517b771a8a83c562218e1d185.png)
-
-![image](https://img.aiym.fun:8888/note/2025/07/6204485110384a5be12733f519b7fc4d.png)
+原文地址：https://blog.aiym.fun:8888/archives/images-random
 
 ---
 
@@ -60,6 +59,7 @@ docker run -d \
   -e REDIS_PASSWORD=halo123 \
   -e REDIS_DATABASE=0 \
   -e AUTH_KEY=testkey123 \
+  -e REFERER_ALLOW_LIST=* \
   --restart=always \
   halo-image-api:1.0.0
 
@@ -71,42 +71,32 @@ docker run -d \
 
 ## ⚙️ 环境变量说明
 
-| 变量名           | 说明                         | 示例值       |
-|------------------|------------------------------|--------------|
-| `SERVER_PORT`    | 服务端口                     | `8080`       |
-| `MYSQL_HOST`     | MySQL 主机地址               | `localhost`  |
-| `MYSQL_PORT`     | MySQL 端口                   | `3306`       |
-| `MYSQL_DB`       | MySQL 数据库名               | `halo`       |
-| `MYSQL_USER`     | MySQL 用户名                 | `halo`       |
-| `MYSQL_PASSWORD` | MySQL 密码                   | `halo123`    |
-| `REDIS_HOST`     | Redis 主机地址               | `localhost`  |
-| `REDIS_PORT`     | Redis 端口                   | `6379`       |
-| `REDIS_PASSWORD` | Redis 密码                   | `halo123`    |
-| `REDIS_DATABASE` | Redis 数据库编号             | `0`          |
-| `AUTH_KEY`       | API 授权 Key                 | `testkey123` |
+| 变量名           | 说明                     | 示例值          |
+|------------------|------------------------|--------------|
+| `SERVER_PORT`    | 服务端口                   | `8080`       |
+| `MYSQL_HOST`     | MySQL 主机地址             | `localhost`  |
+| `MYSQL_PORT`     | MySQL 端口               | `3306`       |
+| `MYSQL_DB`       | MySQL 数据库名             | `halo`       |
+| `MYSQL_USER`     | MySQL 用户名              | `halo`       |
+| `MYSQL_PASSWORD` | MySQL 密码               | `halo123`    |
+| `REDIS_HOST`     | Redis 主机地址             | `localhost`  |
+| `REDIS_PORT`     | Redis 端口               | `6379`       |
+| `REDIS_PASSWORD` | Redis 密码               | `halo123`    |
+| `REDIS_DATABASE` | Redis 数据库编号            | `0`          |
+| `AUTH_KEY`       | API 授权 Key             | `testkey123` |
+| `REFERER_ALLOW_LIST`       | 允许REFERER域（建议设置Halo站点） | `*`          |
 
 ---
 
 ## 📡 API 接口说明
 
-### GET `/api/images` （未控制，其他人可任意调用，不需要可删除接口）
 
-> 返回图片 URL 重定向（302）
-
-示例：
-
-```bash
-curl http://localhost:8080/api/images?postid=abc123
-```
-
----
-
-### GET `/api/images-random?key=xxx`
+### GET `/api/images-random?key=xxx&postid=xxx`
 
 > 受保护的图片随机接口（鉴权方式）
 
 ```bash
-curl http://localhost:8080/api/images-random?key=testkey123
+curl http://localhost:8080/api/images-random?key=testkey123&postid=ee66de06-5241-42aa-bb64-38f040e94728
 ```
 
 ---

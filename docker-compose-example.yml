@@ -4,18 +4,21 @@ services:
   halo-api:
     image: halo-image-api:1.0.0
     container_name: halo-image-api
-    network_mode: "host"
+    network_mode: "host" # 使用宿主机网络,本地允许可采用PORT映射
+    volumes:
+      - ./logs:/app/logs  # 将宿主机当前目录下 logs 映射到容器中
     environment:
-      SERVER_PORT: 8080 #服务端口
-      MYSQL_HOST: localhost
-      MYSQL_PORT: 3306
-      MYSQL_DB: halo
-      MYSQL_USER: halo
-      MYSQL_PASSWORD: halo123
-      REDIS_HOST: localhost
-      REDIS_PORT: 6379
-      REDIS_PASSWORD: halo123
-      REdis_DATABASE: 0
-      AUTH_KEY: testkey123
+      SERVER_PORT: 8080 # 服务端口
+      MYSQL_HOST: localhost # 数据库地址
+      MYSQL_PORT: 3306 # 数据库端口
+      MYSQL_DB: halo # 数据库名称
+      MYSQL_USER: halo # 数据库用户名
+      MYSQL_PASSWORD: halo123 # 数据库密码
+      REDIS_HOST: localhost # redis地址
+      REDIS_PORT: 6379 # redis端口
+      REDIS_PASSWORD: halo123 # redis密码
+      REDIS_DATABASE: 0 # redis数据库
+      AUTH_KEY: testkey123 # 加密密钥
+      REFERER_ALLOW_LIST: '*' # 允许的referer
     restart: always
 

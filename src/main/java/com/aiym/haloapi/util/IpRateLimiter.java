@@ -1,4 +1,4 @@
-package com.example.haloapi.util;
+package com.aiym.haloapi.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

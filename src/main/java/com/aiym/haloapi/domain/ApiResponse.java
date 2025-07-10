@@ -1,4 +1,4 @@
-package com.example.haloapi.domain;
+package com.aiym.haloapi.domain;
 
 /**
  * @author Tanzs

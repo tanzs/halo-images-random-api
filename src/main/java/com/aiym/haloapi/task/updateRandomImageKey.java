@@ -1,4 +1,4 @@
-package com.example.haloapi.task;
+package com.aiym.haloapi.task;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

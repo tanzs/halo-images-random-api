@@ -4,8 +4,8 @@ FROM maven:3.9.6-eclipse-temurin-17 AS builder
 # 设置工作目录
 WORKDIR /app
 
-# 复制本地的 settings.xml 到镜像中的 maven 配置目录
-COPY settings.xml /root/.m2/settings.xml
+# 国内可以复制本地的 settings.xml 到镜像中的 maven 配置目录
+# COPY settings.xml /root/.m2/settings.xml
 
 COPY . .
 

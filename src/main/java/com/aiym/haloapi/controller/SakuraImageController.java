@@ -43,16 +43,6 @@ public class SakuraImageController {
             return buildResponse(403, "Forbidden: invalid client");
         }
 
-
-        // 判断 postid 格式
-        if (!postid.isBlank()) {
-            try {
-                UUID.fromString(postid);
-            } catch (IllegalArgumentException e) {
-                return buildResponse(400, "Invalid postid format");
-            }
-        }
-
         // 检查 IP 请求频率限制
         if (ipRateLimiter.isLimited(ip)) {
             return buildResponse(429, "Too frequent");

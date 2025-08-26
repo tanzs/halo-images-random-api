@@ -4,7 +4,7 @@
 
 本项目在自建Halo个人博客网站时，使用主题：Sakura，因主题自带随机图接口访问经常性加载不出图片，便基于Halo图库以及Sakura主题构建API接口，采用自己图库图片进行随机输出，增加访问效率。
 
-个人博客： https://blog.aiym.fun:8888
+个人博客： https://mblog.aiym.fun
 
 原文地址：https://blog.aiym.fun:8888/archives/images-random
 

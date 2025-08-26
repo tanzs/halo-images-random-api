@@ -6,7 +6,7 @@
 
 个人博客： https://mblog.aiym.fun
 
-原文地址：https://blog.aiym.fun:8888/archives/images-random
+原文地址：https://mblog.aiym.fun/archives/images-random
 
 ---
 
